@@ -1,0 +1,55 @@
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.736), rgba(0, 0, 0, 0.673)), url(../../img/key6.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: calc(100vh);
+    display: grid;
+    place-items: center;
+
+
+    .heroContainer {
+        color: #ffffff;
+        @include flex(flex, center, center);
+        flex-direction: column;
+        background-color: $backGroud;
+        padding: 20px;
+        border-radius: 10%;
+
+        h1 {
+            font-weight: 700;
+            font-size: $fontL;
+
+            span {
+                color: $brigthOrange;
+                font-style: italic;
+                font-weight: 700;
+            }
+        }
+
+        h3 {
+            padding: 15px 0 40px 0;
+        }
+
+        a {
+            padding: 15px 100px;
+        }
+    }
+
+    @media screen and (min-width: 1000px) {
+
+        .heroContainer {
+            background-color: rgba(0, 0, 0, 0.517);
+            border-radius: 120px 20px 120px 20px;
+            padding: 50px 50px 50px 100px;
+            align-content: start;
+            justify-content: start;
+        }
+
+        .heroContainer h1 {
+            font-size: 5rem;
+        }
+    }
+
+}

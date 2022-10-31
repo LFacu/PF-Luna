@@ -1,0 +1,133 @@
+.readyContainer {
+    @include flex(flex, space-between, center);
+    flex-direction: column;
+    gap: 50px;
+    background: linear-gradient(rgba(0, 0, 0, 0.547), rgba(0, 0, 0, 0.512)), url(../../img/key3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .head {
+        background-color: $backGroud;
+        margin-top: 150px;
+        border-radius: 50px;
+        grid-area: title;
+
+        .title1 {
+            color: white;
+            font-size: $fontL;
+            font-weight: 800;
+            padding: 30px;
+
+            span {
+                color: $brigthOrange;
+            }
+        }
+    }
+
+    .head2 {
+        background-color: $backGroud;
+        margin-top: 50px;
+        border-radius: 50px;
+        grid-area: title2;
+
+        .title1 {
+            color: white;
+            font-size: $fontL;
+            font-weight: 800;
+            padding: 30px;
+
+            span {
+                color: $brigthOrange;
+            }
+        }
+    }
+
+    .pro1 {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.493) 30%, rgba(218, 80, 45, 0.6) 100%), url(../../img/key6.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 20%;
+        grid-area: pro1;
+    }
+
+    .pro2 {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.493) 30%, rgba(218, 80, 45, 0.6) 100%), url(../../img/key7.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        grid-area: pro2;
+    }
+
+    .pro3 {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.493) 30%, rgba(218, 80, 45, 0.6) 100%), url(../../img/key8.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        grid-area: pro3;
+    }
+
+
+    .pro4 {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.493) 30%, rgba(218, 80, 45, 0.6) 100%), url(../../img/key6.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 20%;
+        grid-area: pro4;
+    }
+
+    .pro5 {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.493) 30%, rgba(218, 80, 45, 0.6) 100%), url(../../img/key7.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        grid-area: pro5;
+    }
+
+    .pro6 {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.493) 30%, rgba(218, 80, 45, 0.6) 100%), url(../../img/key8.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 50px;
+        grid-area: pro6;
+    }
+
+}
+
+@media screen and (min-width: 1000px) {
+    .readyContainer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+            "title title title"
+            "pro1 pro2 pro3"
+            "title2 title2 title2"
+            "pro4 pro5 pro6"
+        ;
+        place-items: center;
+    }
+
+    .proCard {
+        margin: 5rem 0;
+    }
+
+    .readyContainer {
+        .head {
+            .title1 {
+                font-size: $fontXl;
+            }
+        }
+
+        .head2 {
+            .title1 {
+                font-size: $fontXl;
+            }
+        }
+    }
+
+
+
+
+}

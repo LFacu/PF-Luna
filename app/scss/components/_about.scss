@@ -1,0 +1,57 @@
+.aboutContainer {
+    height: calc(100vh);
+    display: grid;
+    place-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.736), rgba(0, 0, 0, 0.673)), url(../../img/stefen-tan-KYw1eUx1J7Y-unsplash.jpg);
+    background-size: cover;
+    color: white;
+
+    .aboutUs {
+        background-color: #000000ac;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 40px;
+        width: 90%;
+        margin: 9rem 0;
+        box-shadow: 10px 10px 27px -4px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 10px 10px 27px -4px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 27px -4px rgba(0, 0, 0, 0.75);
+
+        h2 {
+            font-weight: 700;
+            font-size: $fontL;
+            padding: 0 0 10px 0;
+            line-height: 2;
+
+            span {
+                color: $brigthOrange;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1000px) {
+        .aboutUs {
+            border-radius: 120px 20px 120px 20px;
+            padding: 40px 30px;
+            width: 70%;
+            margin: 90px 0 0 0;
+
+            h2 {
+                font-weight: 700;
+                color: white;
+                font-size: 5rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+            }
+        }
+
+
+
+
+    }
+}

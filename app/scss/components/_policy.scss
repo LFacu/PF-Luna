@@ -1,0 +1,78 @@
+.sectionContainer {
+    @include flex(flex, center, center);
+
+    .policyContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 15rem 15rem 15rem;
+        grid-template-areas:
+            "shipping"
+            "warranty"
+            "support";
+        color: #ffffff;
+        gap: 20px;
+        padding: 50px 0;
+        width: 95%;
+
+
+
+        img {
+            filter: invert(100%);
+            width: 50px;
+            height: 50px;
+        }
+
+        h3 {
+            span {
+                color: $brigthOrange;
+            }
+        }
+
+        .shipping {
+            grid-area: shipping;
+        }
+
+        .warranty {
+            grid-area: warranty;
+        }
+
+        .support {
+            grid-area: support;
+        }
+    }
+
+    @media screen and (min-width: 1000px) {
+        .policyContainer {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 15rem;
+            grid-template-areas: "shipping warranty support";
+            gap: 50px;
+
+            h3 {
+                font-size: $fontMed;
+                padding: 20px 0;
+            }
+
+            p {
+                font-size: $fontMed;
+            }
+
+            .policy {
+                background-color: $backGroud;
+                flex-direction: column;
+                @include flex(flex, space-evenly, center);
+                height: auto;
+                width: auto;
+                padding: 50px;
+                border-radius: 80px 20px 80px 20px;
+                font-size: $fontS;
+
+                &:hover {
+                    border-radius: 10px;
+                    transform: scale(1.1);
+                    background-color: black;
+                }
+            }
+        }
+    }
+}

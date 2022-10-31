@@ -1,0 +1,63 @@
+.infoContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25em 25em 25rem;
+    grid-template-areas:
+        "card1"
+        "card2"
+        "card3";
+
+    .card1 {
+        background-color: $black;
+        grid-area: card1;
+        @include flex(flex, center, center);
+
+        .img1 {
+            background: linear-gradient(rgba(0, 0, 0, 0.736), rgba(0, 0, 0, 0.673)), url(../../img/key2.jpg);
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: cover;
+        }
+    }
+
+    .card2 {
+        background-color: $black;
+        grid-area: card2;
+        @include flex(flex, center, center);
+
+        .img2 {
+            background: linear-gradient(rgba(0, 0, 0, 0.736), rgba(0, 0, 0, 0.673)),
+                url(../../img/key7.jpg);
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: cover;
+        }
+    }
+
+    .card3 {
+        background-color: $black;
+        grid-area: card3;
+        @include flex(flex, center, center);
+
+        .img3 {
+            background: linear-gradient(rgba(0, 0, 0, 0.736), rgba(0, 0, 0, 0.673)),
+                url(../../img/key3.jpg);
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: cover;
+        }
+    }
+
+}
+
+@media screen and (min-width: 1000px) {
+
+    .infoContainer {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 25em 25em;
+        grid-template-areas:
+            "card1 card1"
+            "card2 card3";
+    }
+
+}

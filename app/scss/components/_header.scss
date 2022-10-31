@@ -1,0 +1,188 @@
+@import "../base/variables";
+
+.navBar {
+    min-height: 8vh;
+    @include flex(flex, space-between, center);
+    background-color: black;
+    padding: 24px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    .logo {
+        @include flex(flex, space-between, center);
+
+        .navImg {
+            height: 49px;
+            width: auto;
+            cursor: pointer;
+            filter: invert(100%);
+        }
+
+        a {
+
+            p {
+                letter-spacing: 5px;
+                font-weight: 800;
+                font-size: $fontL;
+                color: $brigthOrange;
+                margin: 0 0 0 1rem;
+            }
+        }
+    }
+
+    .navLinks {
+        @include flex(flex, space-between, center);
+        color: white;
+        font-weight: 700;
+        font-size: $fontMed;
+
+        .menuHead {
+            display: none;
+        }
+
+        .mobileCta {
+            display: none;
+        }
+
+        li {
+
+            &:not(:last-child) {
+                margin-right: 50px;
+            }
+
+            a {
+                &:hover {
+                    color: $brigthOrange;
+                    font-size: 1.4rem;
+
+                }
+            }
+
+        }
+
+    }
+
+    .cta {
+        p {
+            margin-left: 0.5rem;
+        }
+
+        img {
+            filter: invert(100%);
+        }
+    }
+
+    .burger {
+        cursor: pointer;
+        display: none;
+
+        .base {
+            height: 5px;
+            background-color: $brigthOrange;
+            margin: 5px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .line1 {
+            width: 15px;
+        }
+
+        .line2 {
+            width: 25px;
+        }
+
+        .line3 {
+            width: 30px;
+        }
+    }
+
+
+    @media screen and (max-width: 800px) {
+        .burger {
+            display: block;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .navLinks {
+            position: absolute;
+            right: 0px;
+            height: 92vh;
+            top: 10vh;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 50%;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in;
+
+            .menuHead {
+                display: inline;
+                font-size: 1.5rem;
+                margin: 40px 0 100px 0;
+
+                span {
+                    color: $brigthOrange;
+                }
+            }
+
+            .mobileCta {
+                display: inline;
+                margin-top: 100px;
+            }
+
+            li {
+                font-size: 1.5rem;
+
+                &:not(:last-child) {
+                    margin: 0 0 50px 1px;
+                }
+            }
+        }
+
+        .navLinks li {
+            opacity: 0;
+        }
+
+        .contactButton {
+            display: none;
+        }
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    .toggle .line1 {
+        width: 30px;
+        transform: rotate(-45deg) translate(-7px, 7px);
+    }
+
+    .toggle .line2 {
+        opacity: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-7px, -7px);
+    }
+}

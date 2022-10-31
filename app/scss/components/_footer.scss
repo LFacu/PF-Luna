@@ -1,0 +1,87 @@
+.footerContainer {
+    background-color: black;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 15rem 15rem;
+    grid-template-areas:
+        "footerNav social"
+        "map map";
+
+    span {
+        color: $brigthOrange;
+    }
+
+    h2 {
+        padding: 0 0 20px 0;
+        font-size: 1.5rem;
+    }
+
+    .footerNav {
+        grid-area: footerNav;
+        @include flex(flex, center, center);
+        flex-direction: column;
+
+        .footerLinks {
+            li {
+                padding: 5px;
+            }
+        }
+    }
+
+    .social {
+        grid-area: social;
+        @include flex(flex, center, center);
+        flex-direction: column;
+
+        img {
+            filter: invert(100%);
+        }
+
+        .footerLinks {
+            li {
+                padding: 5px;
+            }
+        }
+    }
+
+    .map {
+        grid-area: map;
+        text-align: center;
+
+        .footerMap {
+            width: 100%;
+        }
+    }
+
+
+}
+
+@media screen and (min-width: 1000px) {
+    .footerContainer {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "footerNav social map";
+    }
+
+    .social {
+        h2 {
+            margin-top: 20px;
+        }
+
+        .footerLinks {
+            @include flex(flex, center, center);
+            gap: 2rem;
+            padding: 50px 0;
+
+        }
+    }
+
+
+    .map {
+        .footerMap {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
