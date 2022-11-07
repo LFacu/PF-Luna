@@ -95,22 +95,88 @@
 
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 800px) {
     .readyContainer {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, auto);
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, auto);
         grid-template-areas:
-            "title title title"
-            "pro1 pro2 pro3"
-            "title2 title2 title2"
-            "pro4 pro5 pro6"
+            "title title title title"
+            "pro1 pro1 pro2 pro2"
+            "pro3 pro3 pro3 pro3"
+            "title2 title2 title2 title2"
+            "pro4 pro4 pro4 pro4"
+            "pro5 pro5 pro6 pro6"
         ;
         place-items: center;
     }
 
-    .proCard {
+    .pro1,
+    .pro2,
+    .pro5,
+    .pro6 {
         margin: 5rem 0;
+        width: 80%;
+        height: 45rem;
+
+        .background1 {
+            width: 0;
+            height: 0;
+        }
+
+        h2 {
+            width: auto;
+            padding: 1rem 2rem;
+            margin-bottom: 10rem;
+            font-size: $fontL;
+            margin: 0;
+        }
+
+        .descriotion {
+            margin: 5rem 0;
+        }
+
+        .buy {
+            flex-direction: column-reverse;
+            gap: 5rem;
+            margin: 0;
+
+            a {
+                border-radius: 10%;
+            }
+        }
+    }
+
+    .pro3,
+    .pro4 {
+        width: 80%;
+
+        .background1 {
+            width: 0;
+            height: 0;
+        }
+
+        h2 {
+            width: auto;
+            padding: 1rem 3rem;
+            margin-top: 100px;
+            font-size: $fontXl;
+        }
+
+        .descriotion {
+            padding: 6rem 0;
+        }
+
+        .buy {
+            flex-direction: row-reverse;
+            gap: 5rem;
+            margin: 0 0 1rem 0;
+
+            a {
+                border-radius: 10%;
+            }
+
+        }
     }
 
     .readyContainer {
@@ -128,6 +194,20 @@
     }
 
 
+
+
+}
+
+
+@media screen and (min-width: 1000px) {
+
+    .readyContainer {
+        .proCard {
+            .descriotion {
+                font-size: $fontL;
+            }
+        }
+    }
 
 
 }

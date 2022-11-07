@@ -419,7 +419,9 @@ button,
     grid-area: map;
     text-align: center; }
     .footerContainer .map .footerMap {
-      width: 100%; }
+      height: auto;
+      width: 80%;
+      border-radius: 90px 20px 90px 20px; }
 
 @media screen and (min-width: 1000px) {
   .footerContainer {
@@ -433,10 +435,7 @@ button,
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding: 50px 0; }
-  .map .footerMap {
-    width: 100%;
-    height: auto; } }
+    padding: 50px 0; } }
 
 .aboutContainer {
   height: calc(100vh);
@@ -446,37 +445,57 @@ button,
   background-size: cover;
   color: white; }
   .aboutContainer .aboutUs {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, auto);
+    grid-template-areas: "usTitle" "usDesc" "teamPic";
+    place-items: center;
     background-color: #000000ac;
     border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
     padding: 40px;
     width: 90%;
     margin: 9rem 0;
     box-shadow: 10px 10px 27px -4px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 10px 10px 27px -4px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 27px -4px rgba(0, 0, 0, 0.75); }
-    .aboutContainer .aboutUs h2 {
+    .aboutContainer .aboutUs .usTitle {
       font-weight: 700;
       font-size: 2rem;
       padding: 0 0 10px 0;
-      line-height: 2; }
-      .aboutContainer .aboutUs h2 span {
+      line-height: 2;
+      grid-area: usTitle; }
+      .aboutContainer .aboutUs .usTitle span {
         color: #da4f2d; }
-  @media screen and (min-width: 1000px) {
+    .aboutContainer .aboutUs .usDesc {
+      grid-area: usDesc; }
+    .aboutContainer .aboutUs .teamPic {
+      grid-area: teamPic;
+      background-image: url(../../img/team.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 20rem;
+      margin-top: 1rem;
+      border-radius: 20px; }
+  @media screen and (min-width: 1300px) {
     .aboutContainer .aboutUs {
       border-radius: 120px 20px 120px 20px;
       padding: 40px 30px;
       width: 70%;
-      margin: 90px 0 0 0; }
-      .aboutContainer .aboutUs h2 {
-        font-weight: 700;
+      margin: 90px 0 0 0;
+      display: grid;
+      place-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+      grid-template-areas: "usTitle teamPic" "usDesc teamPic"; }
+      .aboutContainer .aboutUs .usTitle {
+        font-weight: 800;
         color: white;
         font-size: 5rem; }
-      .aboutContainer .aboutUs p {
-        font-size: 1.5rem; } }
+      .aboutContainer .aboutUs .usDesc {
+        font-size: 2rem; }
+      .aboutContainer .aboutUs .teamPic {
+        width: 80%;
+        height: 100%; } }
 
 .form {
   background-image: url(../../img/key8.jpg);
@@ -547,53 +566,84 @@ button,
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  height: calc(150vh); }
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, auto);
+  grid-template-areas: "kit1" "kit2" "kit3";
+  place-items: center;
+  gap: 2rem;
+  padding: 10rem 0 8rem 0; }
   .kitContainer .kitStyle {
     border-radius: 120px 20px 120px 20px;
-    width: 100%;
-    height: 10rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
+    width: 95%;
+    height: 15rem;
+    display: grid;
+    place-items: center; }
     .kitContainer .kitStyle h2 {
+      text-align: center;
       font-size: 2rem;
       font-weight: 800;
       color: white; }
       .kitContainer .kitStyle h2 span {
         color: #da4f2d; }
+    .kitContainer .kitStyle .parts li {
+      font-weight: 700; }
+    .kitContainer .kitStyle .kitDesc {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px; }
+      .kitContainer .kitStyle .kitDesc p {
+        font-weight: 800;
+        font-size: 1.5rem; }
   .kitContainer .kit1 {
-    background: linear-gradient(rgba(0, 0, 0, 0.359), rgba(0, 0, 0, 0.485)), url(../../img/key9.jpg);
-    background-size: cover; }
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.493) 30%, rgba(218, 80, 45, 0.6) 100%), url(../../img/key9.jpg);
+    background-size: cover;
+    grid-area: kit1; }
     .kitContainer .kit1 p {
       color: white;
       font-weight: 700;
       margin: 10px 0; }
   .kitContainer .kit2 {
-    background: linear-gradient(rgba(0, 0, 0, 0.359), rgba(0, 0, 0, 0.485)), url(../../img/key9.jpg);
-    background-size: cover; }
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.493) 30%, rgba(218, 80, 45, 0.6) 100%), url(../../img/key9.jpg);
+    background-size: cover;
+    grid-area: kit2; }
     .kitContainer .kit2 p {
       color: white;
       font-weight: 700;
       margin: 10px 0; }
   .kitContainer .kit3 {
-    background: linear-gradient(rgba(0, 0, 0, 0.359), rgba(0, 0, 0, 0.485)), url(../../img/key9.jpg);
-    background-size: cover; }
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.493) 30%, rgba(218, 80, 45, 0.6) 100%), url(../../img/key9.jpg);
+    background-size: cover;
+    grid-area: kit3; }
     .kitContainer .kit3 p {
       color: white;
       font-weight: 700;
       margin: 10px 0; }
-  @media screen and (min-width: 1000px) {
+
+@media screen and (min-width: 1000px) {
+  .kitContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "kit1 kit1" "kit2 kit3";
+    place-items: center;
+    gap: 4rem; }
     .kitContainer .kitStyle {
       border-radius: 120px 20px 120px 20px;
       width: 70%;
-      height: 13rem; }
-    .kitContainer .kit1 {
-      margin: 3rem 0 0 0; } }
+      height: 30rem; }
+      .kitContainer .kitStyle h2 {
+        font-size: 3rem; }
+    .kitContainer .kit1 .KitFlex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 100px; }
+      .kitContainer .kit1 .KitFlex .parts li {
+        font-size: 1.5rem; }
+    .kitContainer .kit1 .kitDesc {
+      flex-direction: column; } }
 
 .readyContainer {
   display: flex;
@@ -667,16 +717,81 @@ button,
     margin-bottom: 50px;
     grid-area: pro6; }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 800px) {
   .readyContainer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, auto);
-    grid-template-areas: "title title title" "pro1 pro2 pro3" "title2 title2 title2" "pro4 pro5 pro6";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: "title title title title" "pro1 pro1 pro2 pro2" "pro3 pro3 pro3 pro3" "title2 title2 title2 title2" "pro4 pro4 pro4 pro4" "pro5 pro5 pro6 pro6";
     place-items: center; }
-  .proCard {
-    margin: 5rem 0; }
+  .pro1,
+  .pro2,
+  .pro5,
+  .pro6 {
+    margin: 5rem 0;
+    width: 80%;
+    height: 45rem; }
+    .pro1 .background1,
+    .pro2 .background1,
+    .pro5 .background1,
+    .pro6 .background1 {
+      width: 0;
+      height: 0; }
+    .pro1 h2,
+    .pro2 h2,
+    .pro5 h2,
+    .pro6 h2 {
+      width: auto;
+      padding: 1rem 2rem;
+      margin-bottom: 10rem;
+      font-size: 2rem;
+      margin: 0; }
+    .pro1 .descriotion,
+    .pro2 .descriotion,
+    .pro5 .descriotion,
+    .pro6 .descriotion {
+      margin: 5rem 0; }
+    .pro1 .buy,
+    .pro2 .buy,
+    .pro5 .buy,
+    .pro6 .buy {
+      flex-direction: column-reverse;
+      gap: 5rem;
+      margin: 0; }
+      .pro1 .buy a,
+      .pro2 .buy a,
+      .pro5 .buy a,
+      .pro6 .buy a {
+        border-radius: 10%; }
+  .pro3,
+  .pro4 {
+    width: 80%; }
+    .pro3 .background1,
+    .pro4 .background1 {
+      width: 0;
+      height: 0; }
+    .pro3 h2,
+    .pro4 h2 {
+      width: auto;
+      padding: 1rem 3rem;
+      margin-top: 100px;
+      font-size: 3.5rem; }
+    .pro3 .descriotion,
+    .pro4 .descriotion {
+      padding: 6rem 0; }
+    .pro3 .buy,
+    .pro4 .buy {
+      flex-direction: row-reverse;
+      gap: 5rem;
+      margin: 0 0 1rem 0; }
+      .pro3 .buy a,
+      .pro4 .buy a {
+        border-radius: 10%; }
   .readyContainer .head .title1 {
     font-size: 3.5rem; }
   .readyContainer .head2 .title1 {
     font-size: 3.5rem; } }
+
+@media screen and (min-width: 1000px) {
+  .readyContainer .proCard .descriotion {
+    font-size: 2rem; } }

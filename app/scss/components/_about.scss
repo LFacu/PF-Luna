@@ -7,12 +7,16 @@
     color: white;
 
     .aboutUs {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, auto);
+        grid-template-areas:
+            "usTitle"
+            "usDesc"
+            "teamPic"
+        ;
+        place-items: center;
         background-color: #000000ac;
         border-radius: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
         padding: 40px;
         width: 90%;
         margin: 9rem 0;
@@ -20,33 +24,64 @@
         -webkit-box-shadow: 10px 10px 27px -4px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 10px 10px 27px -4px rgba(0, 0, 0, 0.75);
 
-        h2 {
+        .usTitle {
             font-weight: 700;
             font-size: $fontL;
             padding: 0 0 10px 0;
             line-height: 2;
+            grid-area: usTitle;
 
             span {
                 color: $brigthOrange;
             }
         }
+
+        .usDesc {
+            grid-area: usDesc;
+        }
+
+        .teamPic {
+            grid-area: teamPic;
+            background-image: url(../../img/team.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 20rem;
+            margin-top: 1rem;
+            border-radius: 20px;
+        }
     }
 
-    @media screen and (min-width: 1000px) {
+
+
+    @media screen and (min-width: 1300px) {
         .aboutUs {
             border-radius: 120px 20px 120px 20px;
             padding: 40px 30px;
             width: 70%;
             margin: 90px 0 0 0;
+            display: grid;
+            place-items: center;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, auto);
+            grid-template-areas:
+                "usTitle teamPic"
+                "usDesc teamPic"
+            ;
 
-            h2 {
-                font-weight: 700;
+            .usTitle {
+                font-weight: 800;
                 color: white;
                 font-size: 5rem;
             }
 
-            p {
-                font-size: 1.5rem;
+            .usDesc {
+                font-size: 2rem;
+            }
+
+            .teamPic {
+                width: 80%;
+                height: 100%;
             }
         }
 

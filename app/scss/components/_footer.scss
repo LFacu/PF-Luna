@@ -50,7 +50,9 @@
         text-align: center;
 
         .footerMap {
-            width: 100%;
+            height: auto;
+            width: 80%;
+            border-radius: 90px 20px 90px 20px;
         }
     }
 
@@ -77,11 +79,4 @@
         }
     }
 
-
-    .map {
-        .footerMap {
-            width: 100%;
-            height: auto;
-        }
-    }
 }
