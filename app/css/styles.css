@@ -438,7 +438,6 @@ button,
     padding: 50px 0; } }
 
 .aboutContainer {
-  height: calc(100vh);
   display: grid;
   place-items: center;
   background: linear-gradient(rgba(0, 0, 0, 0.736), rgba(0, 0, 0, 0.673)), url(../../img/stefen-tan-KYw1eUx1J7Y-unsplash.jpg);
@@ -479,9 +478,9 @@ button,
   @media screen and (min-width: 1300px) {
     .aboutContainer .aboutUs {
       border-radius: 120px 20px 120px 20px;
-      padding: 40px 30px;
+      padding: 60px 30px;
       width: 70%;
-      margin: 90px 0 0 0;
+      margin: 15rem 0 10rem 0;
       display: grid;
       place-items: center;
       grid-template-columns: repeat(2, 1fr);
